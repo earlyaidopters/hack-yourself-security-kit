@@ -1,6 +1,6 @@
 """Portable structural checks. Does not scan or contact any application."""
 from pathlib import Path
-import json,re
+import json,re,hashlib
 R=Path(__file__).resolve().parents[1]
 checks=[]
 def ok(name,condition):
@@ -19,6 +19,9 @@ for p in R.rglob('*.md'):
 items=[i for g in json.loads((R/'data/checklist.json').read_text()) for i in g['items']]
 ok('50 unique checklist items',len(items)==50==len({i['id'] for i in items})==len({i['text'] for i in items}))
 ok('six prompts',len(list((R/'prompts').glob('*.txt')))==6)
+for line in (R/'SHA256SUMS').read_text().splitlines():
+    expected,name=line.split('  ',1)
+    ok('checksum: '+name,hashlib.sha256((R/name).read_bytes()).hexdigest()==expected)
 for p in R.rglob('*'):
     if not p.is_file() or '.git' in p.parts:continue
     if p.suffix not in ('.md','.txt','.html','.json','.csv','.py','.cjs','.yml'):continue

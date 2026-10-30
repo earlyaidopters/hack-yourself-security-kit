@@ -1,6 +1,6 @@
 """Rebuild finished assets. Run: python3 -m pip install -r requirements-build.txt"""
 from pathlib import Path
-import json, html, math
+import json, html, math, hashlib
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
@@ -202,4 +202,6 @@ for name,(width,height) in [('cover.jpg',(1600,900)),('thumbnail.jpg',(1000,1000
  d.text((left,height-65),'AUTHORIZED USE ONLY  /  ILLUSTRATIVE GRID',font=font(14 if width==1600 else 18),fill='#b5cad8')
  im.save(R/'assets'/name,quality=95)
 
+checksum_files=['downloads/APP-SECURITY-FIELD-GUIDE.pdf','downloads/TEST-WORKSHEETS.pdf','report/risk-report.html','ALL-PROMPTS.md','CHECKLIST.md']
+(R/'SHA256SUMS').write_text(''.join(hashlib.sha256((R/name).read_bytes()).hexdigest()+'  '+name+'\n' for name in checksum_files))
 print(json.dumps({'field_guide_pages':b.page,'worksheet_pages':w.page,'minimum_content_y':round(b.min_y,1),'report_built':True}))
