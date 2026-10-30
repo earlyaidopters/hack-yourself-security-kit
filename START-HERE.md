@@ -1,6 +1,6 @@
 # Your first useful check
 
-Start with a single question: can one customer read another customer's private record? You can explore more features once you have a result you can explain.
+Start with a single question: can one customer read another customer's private record? Use a test copy of your app, often called a staging environment, with made-up records. You can explore more features once you have a result you can explain.
 
 **If you downloaded the ZIP, extract it first.** The guides, prompts, report, and templates are inside the `APP-SECURITY-FIELD-KIT` folder. No installation is needed to read them or try the report's fictional sample.
 

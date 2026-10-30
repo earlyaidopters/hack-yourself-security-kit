@@ -25,12 +25,12 @@ Built for people who make apps with AI. Start with one feature, then use the wid
 **You can read the guides and try the report without installing anything.**
 
 1. **[Download the ZIP](https://github.com/earlyaidopters/hack-yourself-security-kit/releases/latest/download/APP-SECURITY-FIELD-KIT.zip) and extract it.** Everything is inside the `APP-SECURITY-FIELD-KIT` folder.
-2. **Open [START-HERE.md](START-HERE.md).** Prepare your own staging app, two ordinary test accounts, and one fictional private record.
+2. **Open [START-HERE.md](START-HERE.md).** Prepare a test copy of your app, two ordinary test accounts, and one fictional private record.
 3. **Run one check with your assistant.** Use the [prepare-session prompt](prompts/00-prepare-session.txt), then the [first-check prompt](prompts/01-first-check.txt). Replace `YOUR_APP_URL` and `TEST_RECORD_URL`; provide test logins privately.
 
 For example, put `PRIVATE-NOTE-B` in a fictional note belonging to account B. Confirm that B can read it, then have the assistant request it using account A's session. Inspect the returned evidence and intended sharing rule before deciding whether access was wrong.
 
-Your assistant needs browser or HTTP tools to execute a test. For model setup, use the companion [Uncensored AI Setup Kit](https://github.com/earlyaidopters/uncensored-ai-starter-kit). Other suitable assistants can follow this workflow too.
+Your assistant needs tools that can open the app or make web requests. A text-only chat can suggest tests but cannot run them. For model setup, use the companion [Uncensored AI Setup Kit](https://github.com/earlyaidopters/uncensored-ai-starter-kit). Other suitable assistants can follow this workflow too.
 
 ## See what happened and what to fix
 
@@ -42,7 +42,7 @@ Confirmed findings appear on a clickable grid, with evidence and repairs beside 
 
 **Try it:** open `report/risk-report.html` from the extracted ZIP and click **Try fictional sample**. Or [download the report file directly](https://github.com/earlyaidopters/hack-yourself-security-kit/releases/latest/download/RISK-REPORT.html), then open that downloaded file in your browser. GitHub's HTML source view does not run it.
 
-For your results, use the [report prompt](prompts/05-build-risk-report.txt) and [blank JSON template](templates/assessment.blank.json). Review and redact the data before importing. The page makes no network requests and uses no persistent storage. **Export JSON before closing or reloading** to keep your work.
+For your results, use the [report prompt](prompts/05-build-risk-report.txt) and [blank JSON template](templates/assessment.blank.json). Have your assistant prepare the JSON file, then review it for passwords, tokens, and private information before importing. The page makes no network requests and uses no persistent storage. **Export JSON before closing or reloading** to keep your work.
 
 ## Open the file you need
 
@@ -71,7 +71,7 @@ The five stories cover password resets, customer reviews, metered AI chat, check
 | [04 · Fix and retest](prompts/04-fix-and-retest.txt) | Review a repair, then repeat the forbidden and normal actions |
 | [05 · Build the risk report](prompts/05-build-risk-report.txt) | Prepare redacted JSON for the offline heat map |
 
-Keep the completed scope sheet beside the prompts. Configure real tool permissions and limits in the runtime; prompt wording cannot enforce them.
+Keep the completed scope sheet beside the prompts. Configure tool permissions and limits in the software that runs your assistant; a prompt alone cannot enforce them.
 
 </details>
 
