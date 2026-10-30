@@ -1,7 +1,5 @@
 # Hack Yourself: App Security Field Kit
 
-![Hack Yourself: App Security Field Kit](assets/cover.jpg)
-
 **Check whether one customer can reach another customer's private information, keep the evidence, and verify the fix.**
 
 Built for people who make apps with AI. Start with one feature, then use the wider checklist to choose what to test next.
@@ -15,6 +13,8 @@ Built for people who make apps with AI. Start with one feature, then use the wid
   &nbsp; · &nbsp;
   <a href="CHECKLIST.md">Browse the checklist</a>
 </p>
+
+![Hack Yourself: App Security Field Kit](assets/cover.jpg)
 
 [![Resource checks](https://github.com/earlyaidopters/hack-yourself-security-kit/actions/workflows/check.yml/badge.svg)](https://github.com/earlyaidopters/hack-yourself-security-kit/actions/workflows/check.yml)
 
@@ -30,7 +30,7 @@ Built for people who make apps with AI. Start with one feature, then use the wid
 
 For example, put `PRIVATE-NOTE-B` in a fictional note belonging to account B. Confirm that B can read it, then have the assistant request it using account A's session. Inspect the returned evidence and intended sharing rule before deciding whether access was wrong.
 
-Your assistant needs browser or HTTP tools to execute a test. Still connecting a model? Use the companion [Uncensored AI Setup Kit](https://github.com/earlyaidopters/uncensored-ai-starter-kit). Other suitable assistants can follow this workflow too.
+Your assistant needs browser or HTTP tools to execute a test. For model setup, use the companion [Uncensored AI Setup Kit](https://github.com/earlyaidopters/uncensored-ai-starter-kit). Other suitable assistants can follow this workflow too.
 
 ## See what happened and what to fix
 
